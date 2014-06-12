@@ -86,6 +86,7 @@ public class PresentationUtils {
 		}
 		System.out.println(builder.toString()+node.getNodeName());
 		if(hasChildren(node.getNodeName(), arcList)){//Print all the children if there are any
+			System.out.println(builder.toString()+"\\");
 			for(PresentationNode child : node.getChildren()){
 				printTreeToConsole(child,level+1,arcList);//Recursively calling the method for printing the children
 			}
