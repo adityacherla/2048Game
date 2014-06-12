@@ -47,7 +47,7 @@ public class PresentationTree {
 		
 		SAXParserFactory parserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
-		
+		parserFactory.setNamespaceAware(true);
 		PresentationLinkReader reader = new PresentationLinkReader();
 		File file = new File("C:\\Users\\user\\Desktop\\Java Practice\\pre_cmp_2014-12-31.xml");
 		try {
