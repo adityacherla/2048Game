@@ -12,7 +12,6 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.ParserFactory;
 
 import com.presentationlink.reader.models.PresentationGroup;
 import com.presentationlink.reader.models.PresentationNode;
@@ -28,10 +27,11 @@ import com.presentationlink.reader.service.PresentationUtils;
  * you have a balance sheet all the elements that have been reported will have some relationship with the other.      **
  * The presentation links base tell us how to present the elements in the sheet, what is the relationship between     **
  * different members and order in which each element should be displayed. In nutshell the presentation link base shows**
- * the hierarchy of the elements. This program reads the presentation XML file and prints all the elements in a tree  **
- * Structure.Be sure to keep the presentation link base in standard notations and forms otherwise the output will be  **
- * something else than expected. This program is written as of the present standards. The notation and standards may  **
- * change in the near future. 																	   **
+ * the hierarchy of the elements. Two valid presentation linkbase files are provided in this project,			   **
+ * they are pre_cmp_2013-12-31.xml and pre_cmp_2014-12-31.xml. This program reads the presentation XML file and       **
+ * prints all the elements in a tree structure.Be sure to keep the presentation link base in standard notations       **
+ * and forms otherwise the output will be something else than expected. This program is written as of the present     **
+ * standards. The notation and standards may change in the near future. 									   **
  * In order to use this program put the full path of the presentation link base file in the file object of the main   **
  * method.  																					   **
  * *********************************************************************************************************************
@@ -49,6 +49,7 @@ public class PresentationTree {
 		SAXParser parser = null;
 		parserFactory.setNamespaceAware(true);
 		PresentationLinkReader reader = new PresentationLinkReader();
+		//Paste you file's full path here
 		File file = new File("C:\\Users\\user\\Desktop\\Java Practice\\pre_cmp_2014-12-31.xml");
 		try {
 			parser = parserFactory.newSAXParser();
