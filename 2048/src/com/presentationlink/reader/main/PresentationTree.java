@@ -20,6 +20,22 @@ import com.presentationlink.reader.service.PresentationLinkReader;
 import com.presentationlink.reader.service.PresentationUtils;
 
 /**
+ * *********************************************************************************************************************
+ * 								PRESENTATION LINK BASE TREE PRINTER								   **
+ * *********************************************************************************************************************
+ * This program is related XBRL. XBRL is a standard business reporting language .which has a component known as       **
+ * Presentation link base. The presentation link base is an xml file which contains different elements. For example if**
+ * you have a balance sheet all the elements that have been reported will have some relationship with the other.      **
+ * The presentation links base tell us how to present the elements in the sheet, what is the relationship between     **
+ * different members and order in which each element should be displayed. In nutshell the presentation link base shows**
+ * the hierarchy of the elements. This program reads the presentation XML file and prints all the elements in a tree  **
+ * Structure.Be sure to keep the presentation link base in standard notations and forms otherwise the output will be  **
+ * something else than expected. This program is written as of the present standards. The notation and standards may  **
+ * change in the near future. 																	   **
+ * In order to use this program put the full path of the presentation link base file in the file object of the main   **
+ * method.  																					   **
+ * *********************************************************************************************************************
+ * 12 June 2014
  * This class kick starts the presentation link base reading process and prints 
  * the link base in to a tree on the console
  * @author Aditya Cherla
