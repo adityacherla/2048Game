@@ -33,7 +33,7 @@ public class PresentationLinkReader extends DefaultHandler {
 	
 	
 	public PresentationLinkReader() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	/* (non-Javadoc)
@@ -41,7 +41,6 @@ public class PresentationLinkReader extends DefaultHandler {
 	 */
 	@Override
 	public void startDocument() throws SAXException {
-		// TODO Auto-generated method stub
 		super.startDocument();
 	}
 
@@ -102,8 +101,5 @@ public class PresentationLinkReader extends DefaultHandler {
 	public List<PresentationArc> getArcs() {
 		return arcs;
 	}
-	
-	
-	
 	
 }

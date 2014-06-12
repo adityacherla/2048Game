@@ -6,13 +6,17 @@ package com.presentationlink.reader.models;
 import java.util.List;
 
 /**
- * @author acherla
+ * This class represents a presentation group that groups together
+ * link locators and presentation arcs.
+ * @author Aditya Cherla
  *
  */
 public class PresentationGroup {
 	
 	private List<PresentationArc> arcList;
 	private List<Locator> locatorList;
+	private String role;
+	private String type;
 	
 	/**
 	 * @return the arcList
@@ -50,10 +54,56 @@ public class PresentationGroup {
 	}
 
 	public PresentationGroup(List<PresentationArc> arcList,
+			List<Locator> locatorList, String role, String type) {
+		super();
+		this.arcList = arcList;
+		this.locatorList = locatorList;
+		this.role = role;
+		this.type = type;
+	}
+
+	/**
+	 * @return the role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public PresentationGroup(List<PresentationArc> arcList,
 			List<Locator> locatorList) {
 		super();
 		this.arcList = arcList;
 		this.locatorList = locatorList;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "PresentationGroup [arcList=" + arcList + ", locatorList="
+				+ locatorList + ", role=" + role + ", type=" + type + "]";
 	}
 	
 	
