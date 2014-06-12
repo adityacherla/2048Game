@@ -10,6 +10,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import com.presentationlink.reader.constants.ReaderConstants;
 import com.presentationlink.reader.models.Locator;
 import com.presentationlink.reader.models.PresentationArc;
 import com.presentationlink.reader.models.PresentationGroup;
@@ -52,26 +53,26 @@ public class PresentationLinkReader extends DefaultHandler {
 			Attributes attributes) throws SAXException {
 		PresentationGroup group = null;
 		
-		if(qName.equals("link:presentationLink")){
+		if(localName.equals(ReaderConstants.presentationLinkTag)){
 			 group = new PresentationGroup();
 			 locators = new ArrayList<Locator>();
 			 arcs = new ArrayList<PresentationArc>();
 		}
-		if(qName.equals("link:loc")){
+		if(localName.equals(ReaderConstants.presentationLocatorTag)){
 			Locator locator = new Locator();
-			locator.setHref(attributes.getValue("xlink:href"));
-			locator.setLabel(attributes.getValue("xlink:label"));
-			locator.setTitle(attributes.getValue("xlink:title"));
-			locator.setType(attributes.getValue("xlink:type"));
+			locator.setHref(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationLocHref));
+			locator.setLabel(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationLocLabel));
+			locator.setTitle(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationLocTitle));
+			locator.setType(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationLocType));
 			locators.add(locator);
 		}
-		if(qName.equals("link:presentationArc")){
+		if(localName.equals(ReaderConstants.presentationArcTag)){
 			PresentationArc arc = new PresentationArc();
-			arc.setArcrole(attributes.getValue("xlink:arcrole"));
-			arc.setFrom(attributes.getValue("xlink:from"));
-			arc.setOrder(attributes.getValue("order"));
-			arc.setTo(attributes.getValue("xlink:to"));
-			arc.setType(attributes.getValue("xlink:type"));
+			arc.setArcrole(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.ArcRole));
+			arc.setFrom(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationArcFrom));
+			arc.setOrder(attributes.getValue(ReaderConstants.presentationArcOrder));
+			arc.setTo(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationArcTo));
+			arc.setType(attributes.getValue(ReaderConstants.TagNameSpace,ReaderConstants.presentationLocType));
 			arcs.add(arc);
 		}
 		if(group!=null){
