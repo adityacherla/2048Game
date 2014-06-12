@@ -23,7 +23,7 @@ import com.presentationlink.reader.service.PresentationUtils;
  * *********************************************************************************************************************
  * 								PRESENTATION LINK BASE TREE PRINTER								   **
  * *********************************************************************************************************************
- * This program is related XBRL. XBRL is a standard business reporting language .which has a component known as       **
+ * This program is related to XBRL. XBRL is a standard business reporting language. Which has a component known as    **
  * Presentation link base. The presentation link base is an xml file which contains different elements. For example if**
  * you have a balance sheet all the elements that have been reported will have some relationship with the other.      **
  * The presentation links base tell us how to present the elements in the sheet, what is the relationship between     **
